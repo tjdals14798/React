@@ -1,5 +1,6 @@
 import './App.css';
 import Hello from './com/Hello'
+import Wrapper from './com/Wrapper';
 
 function App() {
  
@@ -12,10 +13,11 @@ function App() {
   }
  
   return (
-    <div className="App">
-      <Hello/>
-      <div style={style}>{name}</div>
-    </div>
+      <Wrapper>
+        <Hello name="react" color="red" isSpecial/>
+        <Hello color="blue"/>
+        <div style={style}>{name}</div>
+      </Wrapper>
   );
 }
 
