@@ -1,6 +1,7 @@
 import './App.css';
 import Hello from './com/Hello'
 import Wrapper from './com/Wrapper';
+import Counter from './com/Counter';
 
 function App() {
  
@@ -17,6 +18,7 @@ function App() {
         <Hello name="react" color="red" isSpecial/>
         <Hello color="blue"/>
         <div style={style}>{name}</div>
+        <Counter/>
       </Wrapper>
   );
 }
