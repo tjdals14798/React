@@ -2,6 +2,7 @@ import './App.css';
 import Hello from './com/Hello'
 import Wrapper from './com/Wrapper';
 import Counter from './com/Counter';
+import InputSample from './com/InputSample';
 
 function App() {
  
@@ -18,7 +19,8 @@ function App() {
         <Hello name="react" color="red" isSpecial/>
         <Hello color="blue"/>
         <div style={style}>{name}</div>
-        <Counter/>
+        <Counter />
+        <InputSample />
       </Wrapper>
   );
 }

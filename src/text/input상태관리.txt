@@ -1,0 +1,8 @@
+onChange 이벤트는 이벤트에 등록하는 함수에서는 이벤트 객체 e 를 파라미터로 받아와서 사용 할 수 있는데
+ 이 객체의 e.target 은 이벤트가 발생한 DOM 인 input DOM 을 가르키게된다.
+이 DOM 의 value 값, 즉 e.target.value 를 조회하면 현재 input 에 입력한 값이 무엇인지 알 수 있다.
+
+이 값은 useState를 통해서 관리를 해준다.
+
+input 상태를 관리할 때에는 input 태그의 value 값도 설정해주는 것이 중요
+    └ 상태가 바뀔시 input의 내용도 업데이트 됨
