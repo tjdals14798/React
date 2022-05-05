@@ -26,19 +26,23 @@ function App() {
     {
       id: 1,
       username: 'velopert',
-      email: 'public.velopert@gmail.com'
+      email: 'public.velopert@gmail.com',
+      active: true
     },
     {
       id: 2,
       username: 'tester',
-      email: 'tester@example.com'
+      email: 'tester@example.com',
+      active: false
     },
     {
       id: 3,
       username: 'liz',
-      email: 'liz@example.com'
+      email: 'liz@example.com',
+      active: false
     }
   ]);
+  
   const nextId = useRef(4);
   const onCreate = () => {
     const user = {
@@ -58,16 +62,25 @@ function App() {
   }
 
   const onRemove = id =>{
+    setUsers(users.filter(user => user.id !==id));
     //user.id가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만든다.
     //= user.id가 id인 것을 삭제
-    setUsers(users.filter(user => user.id !==id));
   }
+
+  const onToggle = id => {
+    setUsers(
+      users.map(user =>
+        user.id === id ? {...user, active: !user.active} : user
+      )
+    );
+  };
+
   return (
       <Wrapper>
         {/* <Hello name="react" color="red" isSpecial/> */}
         {/* <Hello color="blue"/> */}
         <Createuser username={username} email={email} onChange={onChange} onCreate={onCreate}/>
-        <UserList users={users} onRemove={onRemove} />
+        <UserList users={users} onRemove={onRemove} onToggle={onToggle} />
         <Counter />
       </Wrapper>
   );
