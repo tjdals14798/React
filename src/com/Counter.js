@@ -1,14 +1,25 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
+
+function reducer(state, action){
+    switch (action.type){
+        case 'INCREMENT':
+            return state + 1;
+        case 'DECREMENT':
+            return state - 1;
+        default:
+            return state;
+    }
+}
 
 export default function Counter(){
-    const [num,setNum] = useState(0);
+    const [num,dispatch] = useReducer(reducer,0);
 
     const onInc = () =>{
-        setNum(prevNum => prevNum+1);
+        dispatch({type: 'INCREMENT'});
     }
 
     const onDec = () =>{
-        setNum(prevNum => prevNum-1);
+        dispatch({type: 'DECREMENT'});
     }
 
     return(
