@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 //import AppReducer from './AppReducer';
-import App from './App';
+//import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AppToDoList from './AppToDoList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppReducer />
+    <AppToDoList />
   </React.StrictMode>
 );
 
