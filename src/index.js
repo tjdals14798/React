@@ -4,14 +4,21 @@ import './index.css';
 //import AppReducer from './AppReducer';
 //import App from './App';
 import reportWebVitals from './reportWebVitals';
-import AppToDoList from './AppToDoList';
-import './redux/exercise'
+//import AppToDoList from './AppToDoList';
+import AppRedux from './AppRedux';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './redux';
+
+const store = createStore(rootReducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <AppToDoList />
-  </React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      <AppRedux />
+    </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
